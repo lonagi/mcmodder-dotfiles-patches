@@ -1,0 +1,14 @@
+zplug 'zplug/zplug', hook-build: 'zplug --self-manage'
+zplug 'zsh-users/zsh-syntax-highlighting', defer:2
+zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-completions'
+
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && zplug 'matthieusb/zsh-sdkman'
+
+if [ "x$TERM" = "xlinux" ]; then
+  zplug 'dracula/zsh', as:theme
+else
+  SPACESHIP_DIR_TRUNC=7
+  SPACESHIP_DIR_TRUNC_PREFIX=…/
+  zplug 'denysdovhan/spaceship-prompt', use:spaceship.zsh, as:theme
+fi

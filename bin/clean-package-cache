@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "Cleaning pacman cache..."
+paccache -r
+paccache -ruk0
+echo "Cleaning yay cache..."
+paccache -r -c "$HOME/.aur/packages"
+paccache -ruk0 -c "$HOME/.aur/packages"

@@ -1,0 +1,11 @@
+#!/bin/bash
+for arg in $@; do
+  case ${arg##*.} in
+    mid|kar)
+      timidity "${arg}" -Ow -o - | ffmpeg -i - -acodec libmp3lame -ab 320k "${arg%.*}.mp3"
+      ;;
+    *)
+      ffmpeg -i "${arg}" -vn -ar 48000 -ac 2 -ab 320k -f mp3 "${arg%.*}.mp3"
+      ;;
+  esac
+done

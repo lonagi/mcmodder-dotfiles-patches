@@ -1,0 +1,4 @@
+.zplug/
+.zhistory
+.zshrc.d/99-local.zsh
+.sdkman

@@ -1,0 +1,4 @@
+#!/bin/bash
+for arg in $@; do
+  timidity "${arg}" -Ow -o "${arg%.*}.wav"
+done
